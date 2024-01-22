@@ -124,6 +124,7 @@ def Director():
 		if(pom == 0):
 			for z in db1_content:
 				if(z.get("firstName") == f1 and z.get("lastName") == l1):
+					pom = 2
 					if(f != "" and l != ""):
 						db1.update({"firstName": f, "lastName" : l}, z.get("key"))
 					db1.update({"password": p, "paycheck" : y, "hours" : h, "role" : r}, z.get("key"))
@@ -133,6 +134,8 @@ def Director():
 						if(o.get("id") == z.get("id")):
 							db2.update({"role": r}, o.get("key"))
 			st.rerun()
+		if(pom == 0):
+			st.error("User not found")
 		pom = 0
 	d1, d2, d3 = st.columns([1,1,1])
 	with d1:
@@ -249,6 +252,7 @@ def Manager():
 		if(pom == 0):
 			for z in db1_content:
 				if(z.get("firstName") == f1 and z.get("lastName") == l1):
+					pom = 2
 					if(f != "" and l != ""):
 						db1.update({"firstName": f, "lastName" : l}, z.get("key"))
 					db1.update({"password": p, "paycheck" : y, "hours" : h, "role" : r}, z.get("key"))
@@ -257,6 +261,8 @@ def Manager():
 						if(o.get("id") == z.get("id")):
 							db2.update({"role": r}, o.get("key"))
 			st.rerun()
+		if(pom == 0):
+			st.error("User not found")
 		pom = 0
 	d1, d2, d3 = st.columns([1,1,1])
 	with d1:
