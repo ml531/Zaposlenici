@@ -313,7 +313,7 @@ def Worker():
 				st.rerun()
 
 chk = 0
-deta = Deta(st.secrets["data_key"])
+deta = Deta("a0kzff1mwsv_XyUaewTdfsbv2DizbbcD2LsDTAwBypfs")
 db1 = deta.Base("user")
 db2 = deta.Base("logged")
 db1_content = db1.fetch().items
