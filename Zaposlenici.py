@@ -128,9 +128,10 @@ def Director():
 						db1.update({"firstName": f, "lastName" : l}, z.get("key"))
 					db1.update({"password": p, "paycheck" : y, "hours" : h, "role" : r}, z.get("key"))
 						
-				for o in db2_content:
-					if(o.get("id") == z.get("id")):
-						db2.update({"role": r}, o.get("key"))
+				if(z.get("firstName") == f1 and z.get("lastName") == l1):		
+					for o in db2_content:
+						if(o.get("id") == z.get("id")):
+							db2.update({"role": r}, o.get("key"))
 			st.rerun()
 		pom = 0
 	d1, d2, d3 = st.columns([1,1,1])
