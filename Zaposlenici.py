@@ -133,9 +133,11 @@ def Director():
 					for o in db2_content:
 						if(o.get("id") == z.get("id")):
 							db2.update({"role": r}, o.get("key"))
-			st.rerun()
 		if(pom == 0):
 			st.error("User not found")
+		if(pom == 2):
+			pom = 0
+			st.rerun()
 		pom = 0
 	d1, d2, d3 = st.columns([1,1,1])
 	with d1:
@@ -260,9 +262,11 @@ def Manager():
 					for o in db2_content:
 						if(o.get("id") == z.get("id")):
 							db2.update({"role": r}, o.get("key"))
-			st.rerun()
 		if(pom == 0):
 			st.error("User not found")
+		if(pom == 2):
+			pom = 0
+			st.rerun()
 		pom = 0
 	d1, d2, d3 = st.columns([1,1,1])
 	with d1:
